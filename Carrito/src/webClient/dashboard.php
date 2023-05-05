@@ -1,33 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="./css/main.css">
+    <?php
+      include("./../../includes/head.php");
+?>
+    <link rel="stylesheet" href="./../../css/main.css">
 </head>
+
+
+
 <body>
-     
     <div class="wrapper">
-        <aside>
-            <header>
-                <h1 class="logo"> Tienda</h1>
-            </header>
-            <nav>
-                <ul class="menu">
-                    <li><button class="boton-menu boton-categoria active"><i class="bi bi-arrow-right-circle-fill"></i>Todos lo productos</button></li>
-                    <li><button class="boton-menu boton-categoria"><i class="bi bi-arrow-right-circle"></i> Producto 1</button></li>
-                    <li><button class="boton-menu boton-categoria"><i class="bi bi-arrow-right-circle"></i> Producto 2</button></li>
-                    <li><button class="boton-menu boton-categoria"><i class="bi bi-arrow-right-circle"></i> Producto 3</button></li>
-                    <li><a class ="boton-menu boton-carrito"href="./carrito.html"><i class="bi bi-cart-fill"></i>Carrito <span class="numero">0</span></a></li>
-                </ul>
-            </nav>
-            <footer>
-                <p class="texto-footer">Todos los derechos reservados </p>
-            </footer>
-        </aside>
+        <?php
+      include("./../../includes/header.php");
+        ?>
         <main>
             <h2 class="titulo-principal">Todos los productos</h2>
             <div class="contenedor-productos">
@@ -73,7 +61,11 @@
                 </div>
             </div>
         </main>
-    </div>
 
+    </div>
+    <?php
+      include("./../../includes/foother.php");
+    ?>
 </body>
+
 </html>

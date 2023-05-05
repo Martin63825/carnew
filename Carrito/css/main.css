@@ -302,3 +302,8 @@ main{
     box-shadow: 0 0 10px rgba(46, 112, 204, 0.692); /* agrega una sombra */
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* agrega una transición a las propiedades */
 }
+
+.formLogin{
+    padding: 50px;
+    
+}

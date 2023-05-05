@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrito de compras</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="../../../css/main.css">
 </head>
+
 <body>
-    
+
     <div class="wrapper">
         <aside>
             <header>
@@ -17,13 +19,13 @@
             </header>
             <nav>
                 <ul>
-                    <li><a class ="boton-menu boton-volver"href="./index.html"><i class="bi bi-arrow-return-left"></i>Seguir comprando</a></li>
-                    <li><a class ="boton-menu boton-carrito active"href="./carrito.html"><i class="bi bi-cart-fill"></i>Carrito <span class="numero">0</span></a></li>
+                    <li><a class="boton-menu boton-volver" href="./index.html"><i
+                                class="bi bi-arrow-return-left"></i>Seguir comprando</a></li>
+                    <li><a class="boton-menu boton-carrito active" href="./carrito.html"><i
+                                class="bi bi-cart-fill"></i>Carrito <span class="numero">0</span></a></li>
                 </ul>
             </nav>
-            <footer>
-                Todos los derechos reservados 
-            </footer>
+
         </aside>
         <main>
             <h2 class="titulo-principal">Carrito</h2>
@@ -48,7 +50,7 @@
                             <small>Subtotal</small>
                             <p>20</p>
                         </div>
-                        <button class="carrito-producto-eliminar"><i class="bi bi-trash3-fill"></i></button>     
+                        <button class="carrito-producto-eliminar"><i class="bi bi-trash3-fill"></i></button>
                     </div>
                     <div class="carrito-producto">
                         <img class="carrito-producto-imagen" src="./img/producto2.jpg" alt="">
@@ -68,7 +70,7 @@
                             <small>Subtotal</small>
                             <p>40</p>
                         </div>
-                        <button class="carrito-producto-eliminar"><i class="bi bi-trash3-fill"></i></button>     
+                        <button class="carrito-producto-eliminar"><i class="bi bi-trash3-fill"></i></button>
                     </div>
                 </div>
 
@@ -87,6 +89,10 @@
             </div>
         </main>
     </div>
+    <?php
+      include('../../includes/foother.php');
+    ?>
 
 </body>
+
 </html>

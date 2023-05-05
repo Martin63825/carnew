@@ -1,5 +1,13 @@
 <?php
     session_start();
 	session_destroy();
-	header("location: ./../login.php");
+	$user = $_GET['user'];
+
+	if($user == 'Admin'){
+		header("location: ./../src/webAdmin/login.php");
+	}else if ($user == 'Client'){
+		header("location: ./../login.php");
+	}
+
+	
 ?>

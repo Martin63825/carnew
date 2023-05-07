@@ -42,16 +42,20 @@
                 <?php
 		while($row = $productQueyr->fetch_assoc()) {
 			echo'<tr class="text-center">';
-				echo'<td class="bg-white p-1">'.$row["id_producto"].'</td>';
-				echo'<td class="bg-white p-1">'.$row["nombre"].'</td>';
-				echo'<td class="bg-white p-1">'.$row["description"].'</td>';
-				echo'<td class="bg-white p-1">'.$row["stock"].'</td>';
-				echo'<td class="bg-white p-1">'.$row["Precio"].'</td>';
-				echo'<td class="bg-white p-1">'.$row["Estado"].'</td>';
-				echo'<td class="bg-white p-1"><a href="./../../crud/DeleteProducts.php?idProducts='.$row["id_producto"].'">
-                <ion-icon name="trash-outline"></ion-icon></a>
+				echo'<td class="bg-white p-2">'.$row["id_producto"].'</td>';
+				echo'<td class="bg-white p-2">'.$row["nombre"].'</td>';
+				echo'<td class="bg-white p-2">'.$row["description"].'</td>';
+				echo'<td class="bg-white p-2">'.$row["stock"].'</td>';
+				echo'<td class="bg-white p-2">'.$row["Precio"].'</td>';
+				echo'<td class="bg-white p-2">'.$row["Estado"].'</td>';
+				echo'<td class="bg-white p-2">
+                <a href="./plus_Products.php?idProducts='.$row["id_producto"].'">
+                <ion-icon name="add-circle-sharp"></ion-icon></a>
                 <a href="./edit_Products.php?idProducts='.$row["id_producto"].'">
                 <ion-icon name="create-outline"></ion-icon></a>
+                <a href="./../../crud/DeleteProducts.php?idProducts='.$row["id_producto"].'">
+                <ion-icon name="trash-outline"></ion-icon></a>
+                
                 </td>';
         echo '</tr>';
        

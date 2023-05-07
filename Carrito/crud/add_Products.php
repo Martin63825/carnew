@@ -4,8 +4,9 @@
   $descripcion = $_POST['descripcion'];
   $cantidad = $_POST['cantidad'];
   $precio = $_POST['precio'];
-
-  $query ="INSERT INTO productos (nombre, description, stock, Precio) values('$name', '$descripcion','$cantidad', '$precio')";
+  $image = $_POST['inputGroupFile04'];
+  
+  $query ="INSERT INTO productos (nombre, description, stock, Precio, imagen) values('$name', '$descripcion','$cantidad', '$precio', '$image')";
 
 if(mysqli_query($conn, $query)){
 	    echo "<script> 
@@ -17,6 +18,5 @@ if(mysqli_query($conn, $query)){
     alert('Fallo al agregar. Verifique...');  
     window.location = '../src/webAdmin/add_Products.php';
     </script>";  
-  
 }
 ?>

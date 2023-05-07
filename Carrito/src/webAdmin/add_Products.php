@@ -30,6 +30,13 @@
                 <label for="exampleInputEmail1" class="form-label">Precio</label>
                 <input type="text" class="form-control" id="precio" name="precio">
             </div>
+            <div class="mb-3">
+                <div class="input-group">
+
+                    <input type="file" class="form-control" id="inputGroupFile04" name="inputGroupFile04"
+                        aria-describedby=" inputGroupFileAddon04" aria-label="Upload">
+                </div>
+            </div>
             <a href="./dashboard.php" type="submit" class="btn btn-outline-danger">Cancelar</a>
             <button type="submit" class="btn btn-success">Registar Producto</button>
 

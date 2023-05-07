@@ -5,6 +5,9 @@
           </header>
           <nav>
               <ul class="menu">
+                  <li><a href="./VentasProductos.php" class="boton-menu boton-categoria"><i
+                              class="bi bi-arrow-right-circle-fill"></i>Ventas</a>
+                  </li>
                   <li><button class="boton-menu boton-categoria active"><i
                               class="bi bi-arrow-right-circle-fill"></i>Todos lo productos</button></li>
 

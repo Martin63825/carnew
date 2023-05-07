@@ -18,9 +18,6 @@ WHERE ca.id_usuario = '$idUser' and ca.fechaIngreso = '$fechaHoy' and ca.Estado 
     mysqli_query($conn,$buys);
   }
   
- 
- 
-
     if($total !=""){
         $quitarStock ="UPDATE carrito SET Estado = 'Pagado' WHERE id_usuario='$idUser' and fechaIngreso='$fechaHoy'";
         mysqli_query($conn, $quitarStock);

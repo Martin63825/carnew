@@ -43,12 +43,11 @@
                 <a href="./add_Products.php" type="button" class=" btn btn-outline-success">Añadir Nuevo producto</a>
             </div>
             <?php
-            $sql ="SELECT co.id_compra venta, co.cantidad cantidad, co.precio precio, co.fechaCompra, 
-            CONCAT(cli.nombre, ' ', cli.apellido) fullname, pro.nombre nameProduct, pro.description description, pro.imagen imagen
+            $sql ="SELECT co.id_compra as venta, co.cantidad as cantidad, co.precio as precio,
+            CONCAT(cli.nombre, ' ', cli.apellido) as fullname, pro.nombre as nameProduct, pro.description as description, pro.imagen as imagen
             FROM compras co 
             inner JOIN productos pro on co.id_producto = pro.id_producto 
-            inner JOIN clientes cli on co.id_usuario = cli.id ORDER BY co.id_compra desc
-            ";
+            inner JOIN clientes cli on co.id_usuario = cli.id ORDER BY co.id_compra desc";
                $productQueyr = mysqli_query($conn,$sql);
             ?>
 

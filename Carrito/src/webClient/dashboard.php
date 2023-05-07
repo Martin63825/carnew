@@ -1,6 +1,10 @@
+<?php
+  include('./../../includes/conexion.php');
+  session_start();
+  $idUser =$_SESSION['user_id'];
+?>
 <!DOCTYPE html>
 <html lang="en">
-
 
 <head>
     <?php
@@ -9,7 +13,10 @@
     <link rel="stylesheet" href="./../../css/main.css">
 </head>
 
-
+<?php
+  $sqlProducts = "SELECT*FROM productos";
+  $result = mysqli_query($conn,$sqlProducts);
+?>
 
 <body>
     <div class="wrapper">
@@ -19,48 +26,49 @@
         <main>
             <h2 class="titulo-principal">Todos los productos</h2>
             <div class="contenedor-productos">
+                <?php
+                  while($row = mysqli_fetch_array($result)){
+                    $idProduct = $row['id_producto'];
+                    ?>
                 <div class="producto">
                     <img class="producto-imagen" src="./img/producto1.jpg" alt="">
-                    <div class="producto-detalles">
-                        <h3 class="producto-titulo">producto 01</h3>
-                        <p class="producto-precio">$20</p>
-                        <button class="producto-agregar">Agregar</button>
-                    </div>
-                </div>
-                <div class="producto">
-                    <img class="producto-imagen" src="./img/producto2.jpg" alt="">
-                    <div class="producto-detalles">
-                        <h3 class="producto-titulo">producto 02</h3>
-                        <p class="producto-precio">$20</p>
-                        <button class="producto-agregar">Agregar</button>
-                    </div>
-                </div>
-                <div class="producto">
-                    <img class="producto-imagen" src="./img/producto3.jpg" alt="">
-                    <div class="producto-detalles">
-                        <h3 class="producto-titulo">producto 03</h3>
-                        <p class="producto-precio">$20</p>
-                        <button class="producto-agregar">Agregar</button>
-                    </div>
-                </div>
-                <div class="producto">
-                    <img class="producto-imagen" src="./img/producto1.jpg" alt="">
-                    <div class="producto-detalles">
-                        <h3 class="producto-titulo">producto 04</h3>
-                        <p class="producto-precio">$20</p>
-                        <button class="producto-agregar">Agregar</button>
-                    </div>
-                </div>
-                <div class="producto">
-                    <img class="producto-imagen" src="./img/producto2.jpg" alt="">
-                    <div class="producto-detalles">
-                        <h3 class="producto-titulo">producto 05</h3>
-                        <p class="producto-precio">$20</p>
-                        <button class="producto-agregar">Agregar</button>
-                    </div>
+                    <form action="./../../crud/agregaCarrito.php?idUser=idUser&idProducto=idProducto&cantidad=cantidad"
+                        method="post">
+                        <div class=" producto-detalles">
+                            <h2 class="producto-titulo"><?php echo "Producto: ".$row['nombre']; ?></h2>
+                            <h4 class="producto-titulo"><?php echo "Descripción: ".$row['description']; ?></h4>
+                            <p class="producto-precio"><?php echo "Precio: $".$row['Precio']; ?></p>
+                            <p class="producto-precio"><?php echo "Stock: ".$row['stock']; ?></p>
+                            <p class="producto-precio"><?php echo "Estado: ".$row['Estado']; ?></p>
+
+                            <input type="hidden" style="width:30%; margin-left:35%;" name="idProducto"
+                                value="<?php echo $idProduct; ?>">
+                            <input type="hidden" style="width:30%; margin-left:35%;" name="idUser"
+                                value="<?php echo  $idUser; ?>"><br>
+                            <p class="producto-precio">Cantidad a comprar:</p>
+                            <div
+                                style="display: flexbox; text-align: center; justify-items: center; aling-items: center;">
+                                <input type="number" style="width:30%; margin-left:35%;"
+                                    class="producto-precio form-control" name="cantidad">
+                            </div>
+                            <br>
+                            <?php
+                          if($row['stock'] != 0){ ?>
+                            <button type="submit" class=" producto-agregar">Agregar</button>
+                            <?php
+                          }else{?>
+                            <p class="producto-precio">Producto no se encuentra a la Venta hasta nuevo aviso</p>
+                            <?php
+                        }
+                        ?>
+                    </form>
                 </div>
             </div>
-        </main>
+            <?php
+                }
+                ?>
+    </div>
+    </main>
 
     </div>
     <?php
